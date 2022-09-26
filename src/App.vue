@@ -66,7 +66,7 @@
         </v-row>
         <v-row>
           <v-app-bar-title class="ml-4 text-h4">
-            Vuetify Todo
+            {{ $store.state.appTitle }}
           </v-app-bar-title>
         </v-row>
         <v-row>
@@ -97,6 +97,11 @@
           { title: 'About', icon: 'mdi-help-box', to: '/about' },
         ],
     }),
+    // computed: {
+    //   appTitle() {
+    //     return process.env.VUE_APP_TITLE;
+    //   }
+    // },
     components: {
       'search': Search,
       'live-date-time': LiveDateTime,
