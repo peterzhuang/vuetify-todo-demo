@@ -18,7 +18,6 @@
       >
     </v-avatar>
     <div class="white--text text-subtitle-1 font-weight-bold">Yuchuan Zhuang</div>
-    <div class="white--text text-subtitle-2 font-weight-bold">peter__zhuang</div>
     </v-img>
 
       <v-list
@@ -102,6 +101,9 @@
     //     return process.env.VUE_APP_TITLE;
     //   }
     // },
+    mounted() {
+      this.$store.dispatch('getTasks');
+    },
     components: {
       'search': Search,
       'live-date-time': LiveDateTime,
