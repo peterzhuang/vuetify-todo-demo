@@ -45,6 +45,7 @@
       dark
       src="mountain.jpg"
       prominent
+      height="170"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -60,7 +61,12 @@
           <search />
         </v-row>
         <v-row>
-          <v-app-bar-title class="ml-4">Vuetify Todo Demo</v-app-bar-title>
+          <v-app-bar-title class="ml-4 text-h4">
+            Vuetify Todo Demo
+          </v-app-bar-title>
+        </v-row>
+        <v-row>
+          <live-date-time />
         </v-row>
       </v-container>
 
@@ -77,6 +83,7 @@
 <script>
   import Snackbar from '@/components/Shared/Snackbar.vue';
   import Search from '@/components/Tools/Search.vue';
+  import LiveDateTime from './components/Tools/LiveDateTime.vue';
 
   export default {
     data: () => ({ 
@@ -88,6 +95,7 @@
     }),
     components: {
       'search': Search,
+      'live-date-time': LiveDateTime,
       'snackbar': Snackbar
     }
   }
