@@ -1,5 +1,12 @@
 # vuetify-todo-demo
 
+## Feature:
+
+- Add/Edit/Delete Task
+- Reordering tasks by drag and drop
+- Persist tasks in local browser built-in IndexedDB
+- Desktop/Mobile friendly
+
 ## Project setup
 ```
 npm install
