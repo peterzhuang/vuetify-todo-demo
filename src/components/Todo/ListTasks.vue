@@ -4,12 +4,15 @@
       flat
     >
 
-    <task
-        v-for="task in $store.getters.tasksFiltered"
-        :key="task.id"
-        :task="task"
-    />
-
+    <draggable
+      v-model="tasks"
+      handle=".handle">
+      <task
+          v-for="task in tasks"
+          :key="task.id"
+          :task="task"
+      />
+    </draggable>
         <!-- <div
           v-for="task in $store.state.tasks"
           :key="task.id"
@@ -48,6 +51,7 @@
 </template>
 
 <script>
+import draggable from "vuedraggable";
 import Task from "@/components/Todo/Task.vue"
 export default {
     data: () => ({
@@ -57,7 +61,18 @@ export default {
 
     },
     components: {
-        'task': Task
+        'task': Task,
+        draggable
+    },
+    computed: {
+      tasks: {
+        get() {
+          return this.$store.getters.tasksFiltered;
+        },
+        set(value) {
+          this.$store.commit('setTasks', value);
+        }
+      }
     }
 }
 </script>
